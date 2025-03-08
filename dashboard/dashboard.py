@@ -84,7 +84,8 @@ def create_rfm_df(df):
     return rfm_df
 
 #Membaca Data
-all_df = pd.read_csv("all_data.csv")
+file_path = os.path.join(os.path.dirname(__file__), "all_data.csv")
+all_df = pd.read_csv(file_path)
 
 datetime_columns = ["order_purchase_timestamp", "order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", "order_estimated_delivery_date", "shipping_limit_date"]
 all_df.sort_values(by="order_purchase_timestamp", inplace=True)
